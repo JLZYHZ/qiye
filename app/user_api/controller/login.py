@@ -7,4 +7,5 @@ login = Blueprint('login', __name__)
 
 @login.route('/')
 def index():
-    return render_template('../templates/userHtml/login.html')
+    return render_template('../templates/userHtml/../../../templates/login.html')
+

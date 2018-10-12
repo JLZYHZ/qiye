@@ -1,0 +1,16 @@
+.form-container {
+    width: 300px;
+    margin: 200px;
+}
+
+.page-title{
+    text-align: center;
+}
+
+.loginmain{
+    background: #fff;
+    width: 730px;
+    /*height: 700px;*/
+    margin: 0 auto;
+    overflow: hidden;
+}

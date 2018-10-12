@@ -38,10 +38,10 @@
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="index.html">Home</a></li>
 				          <li><a href="about-us.html">About Us</a></li>
-				          <li><a href="category_showcompany.html">Co.SHOW</a></li>
+				          <li><a href="category.html">Category</a></li>
 				          <li><a href="price.html">Price</a></li>
 				          <li><a href="blog-home.html">Blog</a></li>
-				          <li><a href="contact_demand.html">DEMAND</a></li>
+				          <li><a href="contact.html">Contact</a></li>
 				          <li class="menu-has-children"><a href="">Pages</a>
 				            <ul>
 								<li><a href="elements.html">elements</a></li>
@@ -49,8 +49,13 @@
 								<li><a href="single.html">single</a></li>
 				            </ul>
 				          </li>
-				          <li><a class="ticker-btn" href="#">Signup</a></li>
-				          <li><a class="ticker-btn" href="#">Login</a></li>
+                          {% if user %}
+                             <li><a class="ticker-btn" href="#">{{ user.phone_user }}</a></li>
+                             <li><a class="ticker-btn" href="#">注销</a></li>
+                          {% else %}
+                             <li><a class="ticker-btn" href="login.html">登录</a></li>
+                             <li><a class="ticker-btn" href="register.html">注册</a></li>
+                          {% endif %}
 				        </ul>
 				      </nav><!-- #nav-menu-container -->
 			    	</div>
