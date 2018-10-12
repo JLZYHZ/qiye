@@ -43,7 +43,7 @@
   font-weight: 300;
 }
 
-::-ms-input-placeholder {
+:-ms-input-placeholder {
   /* Microsoft Edge */
   color: #777777;
   font-weight: 300;

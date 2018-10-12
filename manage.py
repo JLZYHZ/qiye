@@ -7,6 +7,7 @@ from flask_script import Manager
 
 from companyServer import app
 from exts import db
+from app.user_api.dao.models import UserDao
 
 manager = Manager(app)
 

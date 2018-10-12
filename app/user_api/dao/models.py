@@ -7,9 +7,9 @@ from exts import db
 
 class UserDao(db.Model):
     __tablename__ = 'user'
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    telephone = db.Column(db.String(11),nullable=False)
-    username = db.Column(db.String(50),nullable=False)
-    password = db.Column(db.String(100),nullable=False)
+    phone_user = db.Column(db.String(255), primary_key=True, nullable=False)
+    username_user = db.Column(db.String(255),nullable=False)
+    password_user = db.Column(db.String(255),nullable=False)
+    company_user = db.Column(db.String(255), nullable=False)
 
 

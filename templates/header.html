@@ -14,9 +14,6 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}-三螺旋大数据推荐系统</title>
             <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
-			<!--
-			CSS
-			============================================= -->
 			<link rel="stylesheet" href="../static/css/linearicons.css">
 			<link rel="stylesheet" href="../static/css/font-awesome.min.css">
 			<link rel="stylesheet" href="../static/css/bootstrap.css">
@@ -40,7 +37,7 @@
 				          <li><a href="about-us.html">About Us</a></li>
 				          <li><a href="category.html">Category</a></li>
 				          <li><a href="price.html">Price</a></li>
-				          <li><a href="blog-home.html">Blog</a></li>
+				          <li><a href="policy.html">政策</a></li>
 				          <li><a href="contact.html">Contact</a></li>
 				          <li class="menu-has-children"><a href="">Pages</a>
 				            <ul>
@@ -49,8 +46,13 @@
 								<li><a href="single.html">single</a></li>
 				            </ul>
 				          </li>
-				          <li><a class="ticker-btn" href="#">Signup</a></li>
-				          <li><a class="ticker-btn" href="#">Login</a></li>
+                          {% if user %}
+                             <li><a class="ticker-btn" href="#">{{ user.phone_user }}</a></li>
+                             <li><a class="ticker-btn" href="#">注销</a></li>
+                          {% else %}
+                             <li><a class="ticker-btn" href="login.html">登录</a></li>
+                             <li><a class="ticker-btn" href="register.html">注册</a></li>
+                          {% endif %}
 				        </ul>
 				      </nav><!-- #nav-menu-container -->
 			    	</div>
@@ -58,21 +60,21 @@
 			  </header><!-- #header -->
     {% block mainheader %}{% endblock %}
 
-<script src="../static/js/vendor/jquery-2.2.4.min.js"></script>
-{#              <script src="../static/https://cdn.bootcss.com/popper.js/1.14.3/popper.min.js"></script>#}
-{#			<script src="../static/https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>#}
-			<script src="../static/js/vendor/bootstrap.min.js"></script>
-{#			<script type="text/javascript" src="../static/https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>#}
-  			<script src="../static/js/easing.min.js"></script>
-			<script src="../static/js/hoverIntent.js"></script>
-			<script src="../static/js/superfish.min.js"></script>
-			<script src="../static/js/jquery.ajaxchimp.min.js"></script>
-			<script src="../static/js/jquery.magnific-popup.min.js"></script>
-			<script src="../static/js/owl.carousel.min.js"></script>
-			<script src="../static/js/jquery.sticky.js"></script>
-			<script src="../static/js/jquery.nice-select.min.js"></script>
-			<script src="../static/js/parallax.min.js"></script>
-			<script src="../static/js/mail-script.js"></script>
-			<script src="../static/js/main.js"></script>
+    <script src="../static/js/vendor/jquery-2.2.4.min.js"></script>
+    {#              <script src="../static/https://cdn.bootcss.com/popper.js/1.14.3/popper.min.js"></script>#}
+    {#			<script src="../static/https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>#}
+    <script src="../static/js/vendor/bootstrap.min.js"></script>
+    {#			<script type="text/javascript" src="../static/https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>#}
+    <script src="../static/js/easing.min.js"></script>
+    <script src="../static/js/hoverIntent.js"></script>
+    <script src="../static/js/superfish.min.js"></script>
+    <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="../static/js/jquery.magnific-popup.min.js"></script>
+    <script src="../static/js/owl.carousel.min.js"></script>
+    <script src="../static/js/jquery.sticky.js"></script>
+    <script src="../static/js/jquery.nice-select.min.js"></script>
+    <script src="../static/js/parallax.min.js"></script>
+    <script src="../static/js/mail-script.js"></script>
+    <script src="../static/js/main.js"></script>
 </body>
 </html>

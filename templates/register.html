@@ -1,0 +1,74 @@
+
+
+      {% extends 'header.html' %}
+
+      {% block title %}注册{% endblock %}
+
+        {% block head %}
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+        {% endblock %}
+
+      {% block mainheader %}
+
+
+        <!-- start banner Area -->
+        <section class="banner-area relative" id="home">
+            <div class="overlay overlay-bg"></div>
+            <div class="container">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="about-content col-lg-12">
+                        <h1 class="text-white page-title">
+                            三螺旋
+                        </h1>
+                        <p class="text-white">你想要的，都在这里</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End banner Area -->
+
+        <!-- Login Area -->
+          <div class="registermain">
+        <form action="" method="post" >
+        <div class="form-container" >
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="手机号码" name="phone_user">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="用户名" name="username_user">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="密码" name="password_user">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="重复密码" name="password1">
+            </div>
+             <div class="form-group">
+                <input type="text" class="form-control" placeholder="公司名称" name="company_user">
+            </div>
+            <div class="form-group" style="text-align: center">
+                <button class="btn btn-primary">立即注册</button>
+            </div>
+        </div>
+    </form>
+          </div>
+        <!-- End Login Area -->
+
+      {% endblock %}
+
+        <script src="../static/js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="../static/https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="../static/js/vendor/bootstrap.min.js"></script>
+        <script src="../static/https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+        <script src="../static/js/easing.min.js"></script>
+        <script src="../static/js/hoverIntent.js"></script>
+        <script src="../static/js/superfish.min.js"></script>
+        <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+        <script src="../static/js/jquery.magnific-popup.min.js"></script>
+        <script src="../static/js/owl.carousel.min.js"></script>
+        <script src="../static/js/jquery.sticky.js"></script>
+        <script src="../static/js/jquery.nice-select.min.js"></script>
+        <script src="../static/js/parallax.min.js"></script>
+        <script src="../static/js/mail-script.js"></script>
+        <script src="../static/js/main.js"></script>
