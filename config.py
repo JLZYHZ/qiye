@@ -8,7 +8,7 @@ DEBUG = True
 
 SECRET_KEY = os.urandom(24)
 
-HOSTNAME = '127.0.0.1'
+HOSTNAME = '10.6.11.61'
 PORT = '3306'
 DATABASE = 'web'
 USERNAME = 'root'

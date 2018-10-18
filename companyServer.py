@@ -2,11 +2,13 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import config
 from app.user_api.dao.models import UserDao
+from app.company_api.controller.companyController import companydtail
 from exts import db
 
 app = Flask(__name__)
 app.config.from_object(config)
 db.init_app(app) # 不能忘
+app.register_blueprint(companydtail)
 
 @app.route('/')
 def index():
@@ -16,7 +18,6 @@ def index():
 @app.route('/index.html')
 def index1():
     return render_template('index.html')
-
 
 @app.route('/category.html')
 def category():
@@ -73,10 +74,10 @@ def login():
         user = UserDao.query.filter(UserDao.phone_user == phone_user, UserDao.password_user == password_user).first()
         if user:
             session['phone_user'] = phone_user
-
+            session['company_user'] = user.company_user
             # 如果想在31天内都不需要登录 加checkbox（记住我）
             session.permanent = True
-            return redirect('/')
+            return redirect('/companyinfo.html')
         else:
             return u'手机号码或者密码错误，请确认后再登录!'
 

@@ -1,0 +1,16 @@
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  /*border: 3px solid paleturquoise;*/
+}
+
+th, td {
+  padding: 20px;
+}
+td .tip{
+  padding: 0px;
+  background-color:transparent;
+  border:0;
+  outline: none;
+}
