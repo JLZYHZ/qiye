@@ -3,6 +3,7 @@ from flask import Flask, render_template, Blueprint, current_app, request, sessi
 import config
 from app.user_api.dao.models import UserDao
 from exts import db
+import hashlib
 
 usercontroller = Blueprint('usercontroller', __name__)
 
@@ -13,8 +14,9 @@ def login():
         return render_template('login.html')
     else:
         phone_user = request.form.get('phone_user')
-        password_user = request.form.get('password_user')
-        user = UserDao.query.filter(UserDao.phone_user == phone_user, UserDao.password_user == password_user).first()
+        pwd_temp = hashlib.md5(request.form.get('password_user').encode("utf8"))  # MD5加密
+        password = pwd_temp.hexdigest()  # MD5加密
+        user = UserDao.query.filter(UserDao.phone_user == phone_user, UserDao.password_user == password).first()
         if user:
             session['phone_user'] = phone_user
 
@@ -24,6 +26,7 @@ def login():
         else:
             return u'手机号码或者密码错误，请确认后再登录!'
 
+
 @usercontroller.route('/register.html', methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
@@ -31,8 +34,8 @@ def register():
     else:
         phone_user = request.form.get('phone_user')
         username_user = request.form.get('username_user')
-        password_user = request.form.get('password_user')
-        password1 = request.form.get('password1')
+        password1 = request.form.get('password_user')
+        password2 = request.form.get('password1')
         company_user = request.form.get('company_user')
 
         # 手机号码验证，如果被注册了就不能被注册了
@@ -40,10 +43,13 @@ def register():
         if user:
             return u'该手机号码已被注册，请更换手机号码！'
         else:
-            if password_user != password1:
+            if password1 != password2:
                 return u'两次密码不相等，请核对后再填写！'
             else:
-                user = UserDao(phone_user=phone_user,username_user=username_user,password_user=password_user,company_user=company_user)
+                pwd_temp = hashlib.md5(password1.encode("utf8"))  # MD5加密，中文字符在Python中是以unicode存在的，在hash前要求进行编码转换，是因为同一个字符串在不同的编码体系下有不同的值，为确保不发生歧义必须要进行一次显性转换
+                password = pwd_temp.hexdigest()  # MD5加密
+
+                user = UserDao(phone_user=phone_user,username_user=username_user,password_user=password, company_user=company_user)
                 db.session.add(user)
                 db.session.commit()
                 # 如果注册成功，就让页面跳转的登陆的页面
