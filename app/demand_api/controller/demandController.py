@@ -26,6 +26,10 @@ def submittedController():
             ajax['msg'] = 'true'
     return json.jsonify(ajax)
 
+@demand.route('/demandAdd.html')
+def demandAdd():
+    return render_template('demandAdd.html')
+
 @demand.route('/demandShow.html')
 def demandShow():
     if not session.get('phone_user'):
