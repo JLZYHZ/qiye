@@ -2,113 +2,28 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import config
 from app.user_api.dao.models import UserDao
+
 from exts import db
 
+from app.user_api.controller.login import login
+from app.demand_api.controller.demandController import demand
+from app.demand_api.service.demandService import demandService
 app = Flask(__name__)
 app.config.from_object(config)
 
-#
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-#
-# @app.route('/index.html')
-# def index1():
-#     return render_template('index.html')
-#
-# @app.route('/category.html')
-# def category():
-#     return render_template('category.html')
-#
-# @app.route('/about-us.html')
-# def about():
-#     return render_template('about-us.html')
-#
-# @app.route('/blog-home.html')
-# def blogHome():
-#     return render_template('blog-home.html')
-#
-# @app.route('/blog-single.html')
-# def blogSingle():
-#     return render_template('blog-single.html')
-#
-# @app.route('/contact.html')
-# def contact():
-#     return render_template('contact.html')
-#
-# @app.route('/elements.html')
-# def elements():
-#     return render_template('elements.html')
-#
-# @app.route('/price.html')
-# def price():
-#     return render_template('price.html')
-#
-# @app.route('/search.html')
-# def search():
-#     return render_template('search.html')
-#
-# @app.route('/single.html')
-# def single():
-#     return render_template('single.html')
-db.init_app(app) # 不能忘
+db.init_app(app)  # 不能忘
+app.register_blueprint(login)
+app.register_blueprint(demand)
 
 @app.route('/')
-def start():
-    return render_template('category_showcompany.html')
-    # return render_template('test.html')
+def index():
+    return render_template('demandAdd.html')
 
-@app.route('/category_showcompany.html')
-def showcompany():
-    return render_template('category_showcompany.html')
 
-@app.route('/contact_demand.html')
+@app.route('/demandAdd.html')
 def demand():
-    return render_template('contact_demand.html')
+    return render_template('demandAdd.html')
 
-@app.route('/category.html')
-def category():
-    return render_template('category.html')
-
-
-@app.route('/about-us.html')
-def about():
-    return render_template('about-us.html')
-
-
-@app.route('/blog-home.html')
-def blogHome():
-    return render_template('blog-home.html')
-
-
-@app.route('/blog-single.html')
-def blogSingle():
-    return render_template('blog-single.html')
-
-
-@app.route('/contact.html')
-def contact():
-    return render_template('contact.html')
-
-
-@app.route('/elements.html')
-def elements():
-    return render_template('elements.html')
-
-
-@app.route('/price.html')
-def price():
-    return render_template('price.html')
-
-
-@app.route('/search.html')
-def search():
-    return render_template('search.html')
-
-
-@app.route('/single.html')
-def single():
-    return render_template('single.html')
 
 
 @app.route('/login.html', methods=['GET', 'POST'])
@@ -121,7 +36,9 @@ def login():
         user = UserDao.query.filter(UserDao.phone_user == phone_user, UserDao.password_user == password_user).first()
         if user:
             session['phone_user'] = phone_user
-
+            session['company_user'] = user.company_user
+            session['password_user'] = user.password_user
+            session['username_user'] = user.username_user
             # 如果想在31天内都不需要登录 加checkbox（记住我）
             session.permanent = True
             return redirect('/')
@@ -148,7 +65,9 @@ def register():
             if password_user != password1:
                 return u'两次密码不相等，请核对后再填写！'
             else:
-                user = UserDao(phone_user=phone_user,username_user=username_user,password_user=password_user,company_user=company_user)
+                user = UserDao(phone_user=phone_user, username_user=username_user, password_user=password_user,
+                               company_user=company_user)
+                # db.delete(user)
                 db.session.add(user)
                 db.session.commit()
                 # 如果注册成功，就让页面跳转的登陆的页面
@@ -163,11 +82,6 @@ def my_context_processor():
         if user:
             return {'user': user}
     return {}
-
-
-@app.route('/policy.html')
-def policy():
-    return render_template('policy.html')
 
 
 if __name__ == '__main__':

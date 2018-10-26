@@ -3004,6 +3004,7 @@ tbody.collapse.show {
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > .btn.active {
+
   z-index: 1;
 }
 

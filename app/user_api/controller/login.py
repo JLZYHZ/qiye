@@ -1,11 +1,11 @@
 # encoding: utf-8
-from flask import Flask, render_template, Blueprint
-import config
+from flask import Blueprint
 
 login = Blueprint('login', __name__)
 
 
-@login.route('/')
+@login.route('/gggg')
 def index():
-    return render_template('../templates/userHtml/../../../templates/login.html')
+    return 'HHHHHHHHHHHHH'
+
 
