@@ -19,10 +19,10 @@ def login():
         user = UserDao.query.filter(UserDao.phone_user == phone_user, UserDao.password_user == password).first()
         if user:
             session['phone_user'] = phone_user
-
+            session['company_user'] = user.company_user
             # 如果想在31天内都不需要登录 加checkbox（记住我）
             session.permanent = True
-            return redirect('/')
+            return redirect('/companyinfo.html')
         else:
             return u'手机号码或者密码错误，请确认后再登录!'
 
@@ -53,7 +53,7 @@ def register():
                 db.session.add(user)
                 db.session.commit()
                 # 如果注册成功，就让页面跳转的登陆的页面
-                return redirect(url_for('login'))
+                return redirect(url_for('login.html'))
 
 
 @usercontroller.context_processor

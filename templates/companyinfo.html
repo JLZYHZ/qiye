@@ -48,7 +48,7 @@
                     <div class="col-lg-8 post-list">
                         <div class="single-post d-flex flex-row">
                             <div class="thumb">
-                                 <form id="myform"method=post action="edit">
+                                 <form id="myform"method=post>
                                 <table class="ntable" bgcolor="#f0f8ff">
 
                                     <tr>
@@ -58,7 +58,7 @@
                                         </td>
                                         <th >人员规模：</th>
                                         <td >
-                                            <input type="" class="tip" readonly="true" name="companynum" value="{{ company.stuffnum_company }}"/>
+                                             <input type="text" class="tip" style="width:100%" readonly="true" name="companynum"  value="{{ company.stuffnum_company}}">
                                         </td>
                                     </tr>
                                     <tr>
@@ -95,18 +95,22 @@
 
                                     <tr>
                                         <th >经营范围：</th>
-                                        <td >
-                                           <input type="text" class="tip" readonly="true" name="companyscope" value="{{ company.scope_company }}"/>
+                                        <td colspan="4">
+                                           <input type="text" class="tip" style="width:100%" readonly="true" name="companyscope"  value="{{ company.scope_company }}"/>
+
                                         </td>
-                                        <th >合作单位：</th>
+                                    </tr>
+                                    <tr>
+                                         <th >合作单位：</th>
                                         <td >
-                                             <input type="text" class="tip" readonly="true" name="companypartner" value="{{ company.partner_company }}"/>
+
+                                             <input type="text" class="tip" readonly="true" style="width:100%" name="companypartner" value="{{ company.partner_company }}"/>
                                         </td>
                                     </tr>
                                 </table>
 
 
-                                    <input type="button" value="修改" class="btn btn-primary" onclick="doclick()" >&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="button" class="btn btn-primary" value="修改" onclick="doclick()" >
 
                                     <input type="submit" value="提交" class="btn btn-primary" onclick="upload(event)" >
                                  </form>
@@ -138,19 +142,26 @@
            </section>
               <script>
             function doclick() {
-                $(".tip").attr("readOnly",false);
+                $(".tip").attr("readonly",false);
 
-                //alert("asdfasd");
+                alert("只能修改人数、经营范围、合作单位哦！");
+
             }
+
             function upload(event) {
                 var form = $('#myform');
                 event.preventDefault();
+
                 $.ajax({
                 url: '/edit', // form action url
                 type: 'POST', // form submit method get/poston/xml
-                data: form.serialize(), // serialize form data
-                success: function(data) {
-                    alert("修改成功"); // fade in response data
+                data: form.serialize(), // serialize form data，这个data指前台传给后台的数据
+                success: function(data) {//这里的data是后台传给前台的数据
+                    if(data['msg']==="更新成功"){
+                        alert("修改成功");
+                        $(".tip").attr("readonly",true);
+                    }else
+                        alert("修改失败")
 
                 },
                 error: function(e) {
@@ -159,6 +170,7 @@
             });
             }
               </script>
- {% endblock %}
+
+          {% endblock %}
 </body>
 </html>
