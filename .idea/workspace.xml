@@ -183,6 +183,11 @@
               <item name="qiye" type="b2602c69:ProjectViewProjectNode" />
               <item name="qiye" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="qiye" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qiye" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -349,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540536488196</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="zjl 1026 -add .gitignore">
+      <created>1540537094047</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1540537094047</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -406,7 +418,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="zjl 1026" />
-    <option name="LAST_COMMIT_MESSAGE" value="zjl 1026" />
+    <MESSAGE value="zjl 1026 -add .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="zjl 1026 -add .gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
