@@ -15,7 +15,7 @@ db.init_app(app) # 不能忘
 app.register_blueprint(usercontroller)
 app.register_blueprint(policycontroller)
 
-app.register_blueprint(companydtail)
+# app.register_blueprint(companydetail)
 app.register_blueprint(demand)
 
 @app.route('/')
