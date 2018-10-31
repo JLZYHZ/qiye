@@ -5,7 +5,7 @@
       {% block title %}注册{% endblock %}
 
         {% block head %}
-            <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+            <link rel="stylesheet" href="../static/css/register.css">
         {% endblock %}
 
       {% block mainheader %}
@@ -62,11 +62,21 @@
              <div class="form-group">
                 <input type="text" class="form-control" placeholder="公司名称" name="company_user"/>
             </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="graph_captcha" placeholder="请输入验证码">
+                    <span class="input-group-addon captcha-addon">
+                        <a href="#"><img id="captcha-img" src="{{ url_for('usercontroller.graph_captcha') }}"></a><!--加了id aptcha-img-->
+                    </span>
+                </div>
+            </div>
             <div class="form-group" style="text-align: center">
                 <button class="btn btn-primary">立即注册</button>
             </div>
         </div>
     </form>
+          <script src="../static/js/login/login-js.js"></script>
+          <script src="../static/js/login/front_signup.js"></script>
           </div>
         <!-- End Register Area -->
 
