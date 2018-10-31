@@ -5,7 +5,7 @@ from app.user_api.dao.models import UserDao
 from exts import db
 from app.user_api.controller.usercontroller import usercontroller
 from app.policy_api.controller.policyController import policycontroller
-
+from app.company_api.controller.companyController import companydtail
 from app.demand_api.controller.demandController import demand
 
 app = Flask(__name__)
@@ -15,7 +15,7 @@ db.init_app(app) # 不能忘
 app.register_blueprint(usercontroller)
 app.register_blueprint(policycontroller)
 
-# app.register_blueprint(companydetail)
+app.register_blueprint(companydtail)
 app.register_blueprint(demand)
 
 @app.route('/')
