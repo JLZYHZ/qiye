@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e089ab7-ca8f-4625-a114-7d10ac501a5b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/utils/captcha/Verdana.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/img/404error.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/utils/captcha/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/utils/xjson.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/css/policy-single.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/login/front_signup.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/js/login/login-js.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/404.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/policy-single.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/policy_api/controller/policyController.py" afterPath="$PROJECT_DIR$/app/policy_api/controller/policyController.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/policy_api/dao/policyDao.py" afterPath="$PROJECT_DIR$/app/policy_api/dao/policyDao.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/user_api/controller/usercontroller.py" afterPath="$PROJECT_DIR$/app/user_api/controller/usercontroller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/companyServer.py" afterPath="$PROJECT_DIR$/companyServer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/login.css" afterPath="$PROJECT_DIR$/static/css/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/register.css" afterPath="$PROJECT_DIR$/static/css/register.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/header.html" afterPath="$PROJECT_DIR$/templates/header.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/login.html" afterPath="$PROJECT_DIR$/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/policy.html" afterPath="$PROJECT_DIR$/templates/policy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/register.html" afterPath="$PROJECT_DIR$/templates/register.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,8 +25,8 @@
       <file leaf-file-name="usercontroller.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/user_api/controller/usercontroller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="53" column="39" lean-forward="true" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
+            <state relative-caret-position="660">
+              <caret line="66" column="18" lean-forward="true" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
               <folding>
                 <element signature="e#18#134#0" expanded="true" />
               </folding>
@@ -376,13 +355,20 @@
       <option name="project" value="LOCAL" />
       <updated>1539853262236</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="hs1031">
+      <created>1540966772697</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1540966772697</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18176973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18176973" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -412,7 +398,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="将user操作放进api" />
     <MESSAGE value="增加正则和md5" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加正则和md5" />
+    <MESSAGE value="hs1031" />
+    <option name="LAST_COMMIT_MESSAGE" value="hs1031" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -779,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/user_api/controller/usercontroller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="53" column="39" lean-forward="true" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
+        <state relative-caret-position="660">
+          <caret line="66" column="18" lean-forward="true" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
           <folding>
             <element signature="e#18#134#0" expanded="true" />
           </folding>
