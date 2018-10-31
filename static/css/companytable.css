@@ -1,0 +1,38 @@
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  /*border: 3px solid paleturquoise;*/
+}
+
+th, td {
+    padding: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+td .tip{
+  padding: 0px;
+  border:0;
+}
+
+.ntable .tb {
+    /* background: #F2F9FC; */
+}
+/*.ntable .td {*/
+    /*padding: 12px 10px 12px 10px;*/
+    /*border: #E4EEF6 1px solid;*/
+    /*word-break: break-all;*/
+    /*font-size: 14px;*/
+    /*line-height: 19px;*/
+    /*color: #222;*/
+/*}*/
+input, button, select, optgroup, textarea {
+    margin: 10%;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+

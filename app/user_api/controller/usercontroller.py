@@ -16,17 +16,16 @@ def login():
     if request.method == 'GET':
         return render_template('login.html')
     else:
-
         phone_user = request.form.get('phone_user')
         pwd_temp = hashlib.md5(request.form.get('password_user').encode("utf8"))  # MD5加密
         password = pwd_temp.hexdigest()  # MD5加密
         user = UserDao.query.filter(UserDao.phone_user == phone_user, UserDao.password_user == password).first()
         if user:
             session['phone_user'] = phone_user
-
+            session['company_user'] = user.company_user
             # 如果想在31天内都不需要登录 加checkbox（记住我）
             session.permanent = True
-            return redirect('/')
+            return redirect('/companyinfo.html')
         else:
             return u'手机号码或者密码错误，请确认后再登录!'
 

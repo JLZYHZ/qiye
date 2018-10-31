@@ -1702,6 +1702,8 @@ pre code {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  /*margin-bottom: 20px;*/
+
 }
 
 .form-control::-ms-expand {
@@ -3002,6 +3004,7 @@ tbody.collapse.show {
 .btn-group-vertical > .btn:focus,
 .btn-group-vertical > .btn:active,
 .btn-group-vertical > .btn.active {
+
   z-index: 1;
 }
 
