@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9e089ab7-ca8f-4625-a114-7d10ac501a5b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/companyServer.py" afterPath="$PROJECT_DIR$/companyServer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -324,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540970999907</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="hs1031 15:34">
+      <created>1540971256085</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1540971256085</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -373,7 +379,8 @@
     <MESSAGE value="增加正则和md5" />
     <MESSAGE value="hs1031" />
     <MESSAGE value="hs1031 3rd" />
-    <option name="LAST_COMMIT_MESSAGE" value="hs1031 3rd" />
+    <MESSAGE value="hs1031 15:34" />
+    <option name="LAST_COMMIT_MESSAGE" value="hs1031 15:34" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -707,6 +714,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
