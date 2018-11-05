@@ -8,6 +8,7 @@ from flask_script import Manager
 from companyServer import app
 from exts import db
 from app.user_api.dao.models import UserDao
+from app.policy_api.dao.policyDao import PolicyDao
 
 manager = Manager(app)
 

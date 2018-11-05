@@ -1,9 +1,12 @@
 # encoding: utf-8
-from flask import Flask, render_template, Blueprint, current_app, request, session, redirect, url_for
+from flask import Flask, render_template, Blueprint, current_app, request, session, redirect, url_for, make_response
 import config
 from app.user_api.dao.models import UserDao
 from exts import db
 import hashlib
+from app.utils.captcha import Captcha
+from io import BytesIO
+from app.utils import xjson
 
 usercontroller = Blueprint('usercontroller', __name__)
 
@@ -53,9 +56,10 @@ def register():
                 db.session.add(user)
                 db.session.commit()
                 # 如果注册成功，就让页面跳转的登陆的页面
-                return redirect(url_for('login.html'))
+                return redirect('/login.html')
 
 
+# 保存session中用户信息的操作
 @usercontroller.context_processor
 def my_context_processor():
     phone_user = session.get('phone_user')
@@ -64,3 +68,29 @@ def my_context_processor():
         if user:
             return {'user': user}
     return {}
+
+
+# 注销
+@usercontroller.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/login.html')
+
+# 生成图片验证码
+@usercontroller.route('/graph_captcha/')
+def graph_captcha():
+    text, image = Captcha.gene_graph_captcha()
+    out = BytesIO()
+    image.save(out, 'png')
+    out.seek(0)
+    resp = make_response(out.read())
+    resp.content_type = 'image/png'
+    return resp
+
+@usercontroller.route('/isLogined')
+def isLogined():
+    if not session.get('phone_user'):
+        return 'not login'
+    else:
+        return 'logined'
+

@@ -28,7 +28,10 @@ def submittedController():
 
 @demand.route('/demandAdd.html')
 def demandAdd():
-    return render_template('demandAdd.html')
+    if not session.get('phone_user'):
+        return redirect('/login.html')
+    else:
+        return render_template('demandAdd.html')
 
 @demand.route('/demandShow.html')
 def demandShow():

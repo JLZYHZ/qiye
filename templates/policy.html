@@ -15,7 +15,7 @@
             <h1 class="text-white">
                 政策推送
             </h1>
-            <p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="blog-home.html"> Policy Post</a></p>
+            <p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="policy.html"> Policy Post</a></p>
         </div>
     </div>
 </div>
@@ -34,19 +34,24 @@
                     <li><a href="#">人才企业, </a></li>
                     <li><a href="#">补贴政策</a></li>
                 </ul>
-                <a href="blog-single.html">
+                <a href="{{ url_for('policycontroller.policy_single', id_policy=policy[0].id_policy) }}">
                     <h1 style="font-family: 'Microsoft YaHei UI'">
-                        2018年昆山市学会能力提升、高层次学术和科普活动资助项目拟立项公示
+
+                            {{ policy[0].name_policy }}
+
                     </h1>
                 </a>
-                    <p>
-                        根据《昆山市学术资助项目管理办法（试行）》、《昆山市科普活动资助项目管理办法（试行）》、《昆山市高层次学术资助项目管理办法》和《昆山市科技计划项目管理流程》，经单位申报、区镇审核推荐、专家网上评审、现场考察、信用审查等程序，现对2018年昆山市学会能力提升、高层次学术和科普活动资助拟立项项目进行公示。
-                    </p>
+
+                <p  id='over'>
+                        {{ policy[0].overview_policy[2:-2] }}
+                </p>
+
                 <div class="bottom-meta">
                     <div class="user-details row align-items-center">
                         <div class="comment-wrap col-lg-6">
                             <ul>
-                                <li><a href="#"><span class="lnr lnr-heart"></span>	4 likes</a></li>
+                                <li><span>{{ policy[0].time_policy }}</span> </li>
+{#                                <li><a href="#"><span class="lnr lnr-heart"></span>	4 likes</a></li>#}
                                 <li><a href="#"><span class="lnr lnr-bubble"></span> 06 Comments</a></li>
                             </ul>
                         </div>
@@ -69,19 +74,20 @@
                     <li><a href="#">补贴政策, </a></li>
                     <li><a href="#">申请立项</a></li>
                 </ul>
-                <a href="blog-single.html">
+                <a href="policy-single.html">
                     <h1>
-                        2018年度江苏省工程技术研究中心、院士工作站拟立项项目公示
+                        {{ policy[1].name_policy }}
                     </h1>
                 </a>
                     <p>
-                        根据省科技厅《关于下放省级工程技术研究中心和省级企业人才站点管理权限的通知》（苏科条发〔2015〕136号）和苏州市《关于组织申报2018年省级、市级企业工程技术研究中心和省级企业院士工作站的通知》（苏科服〔2018〕40号）要求，经组织申报、专家评审，现将2018年度江苏省工程技术研究中心院士工作站拟推荐项目予以公示，公示时间为2018年9月3日-9月7日。
+                        {{ policy[1].overview_policy }}
                     </p>
                 <div class="bottom-meta">
                     <div class="user-details row align-items-center">
                         <div class="comment-wrap col-lg-6">
                             <ul>
-                                <li><a href="#"><span class="lnr lnr-heart"></span>	4 likes</a></li>
+                                <li><span>{{ policy[1].time_policy }}</span> </li>
+{#                                <li><a href="#"><span class="lnr lnr-heart"></span>	4 likes</a></li>#}
                                 <li><a href="#"><span class="lnr lnr-bubble"></span> 06 Comments</a></li>
                             </ul>
                         </div>
@@ -104,19 +110,20 @@
                     <li><a href="#">合作交流, </a></li>
                     <li><a href="#">申请立项</a></li>
                 </ul>
-                <a href="blog-single.html">
+                <a href="policy-single.html">
                     <h1>
-                        关于同意成立华天科技(昆山)电子有限公司科学技术协会的批复
+                        {{ policy[2].name_policy }}
                     </h1>
                 </a>
                     <p>
-                        华天科技（昆山）电子有限公司科协筹备组：你科协筹备组2018年8月15日“关于成立华天科技（昆山）电子有限公司科学技术协会的申请”已收悉，经审核，《华天科技（昆山）电子有限公司科学技术协会章程》符合成立科技社团的要求，现批复如下：同意成立华天科技（昆山）电子有限公司科学技术协会（以下简称华天科协），业务上接受昆山开发区科协和上级科协的指导，是昆山开发区科协的组成部分，昆山市科协的基层组织。
+                        {{ policy[2].overview_policy }}
                     </p>
                 <div class="bottom-meta">
                     <div class="user-details row align-items-center">
                         <div class="comment-wrap col-lg-6">
                             <ul>
-                                <li><a href="#"><span class="lnr lnr-heart"></span>	4 likes</a></li>
+                                <li><span>{{ policy[2].time_policy }}</span> </li>
+{#                                <li><a href="#"><span class="lnr lnr-heart"></span>	4 likes</a></li>#}
                                 <li><a href="#"><span class="lnr lnr-bubble"></span> 06 Comments</a></li>
                             </ul>
                         </div>
@@ -139,19 +146,20 @@
                     <li><a href="#">过去展望, </a></li>
                     <li><a href="#">未来建设</a></li>
                 </ul>
-                <a href="blog-single.html">
+                <a href="policy-single.html">
                     <h1>
-                        昆山市科技局关于开展解放思想大讨论活动的实施方案
+                        {{ policy[3].name_policy }}
                     </h1>
                 </a>
                     <p>
-                        为深入学习贯彻习近平新时代中国特色社会主义思想和党的十九大精神，特别是习近平总书记对江苏工作的系列重要指示精神，全面落实习近平总书记关于进一步解放思想、将改革开放进行到底的最新要求，以思想大解放之勇，争高质量发展之先。紧扣“学习新思想、改革再出发、开放迈新步、发展高质量”主题，积极打造具有县域特点的昆山科技创新中心，围绕做好高质量发展榜样、走在“两个标杆”前列目标，全力争当“强富美高”新江苏建设先行军排头兵，按照中共昆山市委办公室印发《关于开展解放思想大讨论活动的实施方案》统一要求，决定在全局开展解放思想大讨论活动。
+                       {{ policy[3].overview_policy }}
                     </p>
                 <div class="bottom-meta">
                     <div class="user-details row align-items-center">
                         <div class="comment-wrap col-lg-6">
                             <ul>
-                                <li><a href="#"><span class="lnr lnr-heart"></span>	4 likes</a></li>
+                                <li><span>{{ policy[3].time_policy }}</span> </li>
+{#                                <li><a href="#"><span class="lnr lnr-heart"></span>	4 likes</a></li>#}
                                 <li><a href="#"><span class="lnr lnr-bubble"></span> 06 Comments</a></li>
                             </ul>
                         </div>
@@ -213,7 +221,7 @@
                             <img class="img-fluid" src="../static/img/blog/r1.jpg" alt="">
                         </div>
                         <div class="recent-details">
-                            <a href="blog-single.html">
+                            <a href="policy-single.html">
                                 <h4>
                                     Home Audio Recording
                                     For Everyone
@@ -229,7 +237,7 @@
                             <img class="img-fluid" src="../static/img/blog/r2.jpg" alt="">
                         </div>
                         <div class="recent-details">
-                            <a href="blog-single.html">
+                            <a href="policy-single.html">
                                 <h4>
                                     Home Audio Recording
                                     For Everyone
@@ -245,7 +253,7 @@
                             <img class="img-fluid" src="../static/img/blog/r3.jpg" alt="">
                         </div>
                         <div class="recent-details">
-                            <a href="blog-single.html">
+                            <a href="policy-single.html">
                                 <h4>
                                     Home Audio Recording
                                     For Everyone
@@ -261,7 +269,7 @@
                             <img class="img-fluid" src="../static/img/blog/r4.jpg" alt="">
                         </div>
                         <div class="recent-details">
-                            <a href="blog-single.html">
+                            <a href="policy-single.html">
                                 <h4>
                                     Home Audio Recording
                                     For Everyone
@@ -399,4 +407,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="../static/js/parallax.min.js"></script>
 <script src="../static/js/mail-script.js"></script>
 <script src="../static/js/main.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.5.17-beta.0/vue.min.js"></script>
 
